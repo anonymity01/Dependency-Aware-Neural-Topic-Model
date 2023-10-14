@@ -6,12 +6,12 @@ Code for the paper: [Dependency-Aware Neural Topic Model]() (Information Process
 - python 3.6.5
 - torch 1.7.1
 
-# data format
+# Data format
 - Follow data in paper: [Neural Variational Inference for Text Processing (2016)](https://github.com/ysmiao/nvdm/tree/master/data/20news)
 
-- id_label_50.txt.train (test): 
+- id_label_50.txt.train (test): each line represents the labels of each document, split by space
 
-- label_fre_sorted_list.txt: 
+- label_fre_sorted_list.txt: each line represents a name of the label
 
 # Run:
 - CUDA_VISIBLE_DEVICES=0 python ./run_depntm.py --hidden 512 --topicembedsize 256 --topics 50  --data-path data_path --vocab-size 10050  --label-path id_label_50.txt.train --label-voc-path label_fre_sorted_list.txt --fname abstract_50 --gama 64 --z2-dim 64 --model-save-path output_dir --background-topics 5
