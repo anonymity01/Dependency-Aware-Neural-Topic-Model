@@ -28,13 +28,13 @@ import torch.utils.data as Data
 # from PIL import Image
 import os
 import numpy as np
-from torchvision import transforms
+# from torchvision import transforms
 from codebase import utils as ut
 from codebase.models.depntm import DepNTM
 import argparse
 from pprint import pprint
 cuda = torch.cuda.is_available()
-from torchvision.utils import save_image
+# from torchvision.utils import save_image
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
@@ -50,8 +50,8 @@ parser.add_argument('--hidden', type=int, default=512, metavar='N',
     help="The size of hidden units in MLP inference network (default 256)")
 parser.add_argument('--dropout', type=float, default=0.8, metavar='N', 
     help="The drop-out probability of MLP (default 0.8)")
-parser.add_argument('--lr', type=float, default=1e-5, metavar='N', 
-    help="The learning rate of model (default 1e-5)")
+parser.add_argument('--lr', type=float, default=1e-3, metavar='N', 
+    help="The learning rate of model (default 1e-3)")
 parser.add_argument('--topics', type=int, default=50, metavar='N',
     help="The amount of topics to be discover (default 50)")
 parser.add_argument('--batch-size', type=int, default=256, metavar='N',
