@@ -328,15 +328,11 @@ class CausalNTM(nn.Module):
                 ppl_sum += torch.sum(per_ppl).item()
                 doc_count += len(data)
                 m = len(train_dataloader)
-            if epoch % 1 == 0:
-                print(str(epoch)+' loss:'+str(loss_sum/m)+' KL:'+str(kld_sum/m)+' rec:'+str(total_rec/m)+'m:' + str(m))
             corpus_ppl = torch.exp(total_rec / training_word_count)
             per_doc_ppl= np.exp(ppl_sum /doc_count)
             kldc=torch.div(kld_sum, len(train_dataloader))
-            print('| Training epoch %2d | Corpus PPX: %.5f | Per doc PPX: %.5f | KLD: %.5f' % (epoch+1, 
-                corpus_ppl, 
-                per_doc_ppl, 
-                kldc))
+            print('| Training epoch %2d | Corpus PPX: %.5f ' % (epoch+1, 
+                corpus_ppl))
             
             #Evaluating model on testset
             t_theta=[]
@@ -372,10 +368,8 @@ class CausalNTM(nn.Module):
                 test_ppl = torch.exp(total_rec / training_word_count)
                 per_doc_ppl= np.exp(ppl_sum / doc_count)
                 kldc = torch.div(kld_sum, len(test_dataloader))
-                print('===Test epoch %2d ===| Testset PPX: %.5f | Per doc PPX: %.5f | KLD: %.5f' % (epoch+1, 
-                    test_ppl, 
-                    per_doc_ppl, 
-                    kldc))
+                print('===Test epoch %2d ===| Testset PPX: %.5f' % (epoch+1, 
+                    test_ppl))
                 #Recording training statics
                 curr_test_ppl = float(test_ppl.detach().cpu().numpy())
             torch.save(self.state_dict(), MODEL_SAV_PATH + "current.pkl")
