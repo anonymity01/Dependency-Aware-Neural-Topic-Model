@@ -1,0 +1,10 @@
+word1 100
+word2 80
+word3 70
+word4 60
+word5 50
+word6 30
+word7 20
+word8 10
+word9 3
+word10 2
