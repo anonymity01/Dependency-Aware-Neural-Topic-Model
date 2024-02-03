@@ -9,7 +9,7 @@ Code for the paper: [Dependency-Aware Neural Topic Model](https://doi.org/10.101
 ## Data format
 - Follow data in paper: [Neural Variational Inference for Text Processing (2016)](https://github.com/ysmiao/nvdm/tree/master/data/20news)
 
-- id_label_50.txt.train (test): each line represents the labels of each document, split by space
+- id_label_50.txt.train (test): each line represents the labels of each document, split by space， i.e. docID\tlabel1 label2...
 
 - label_fre_sorted_list.txt: each line represents a name of the label
 
