@@ -15,6 +15,9 @@ Code for the paper: [Dependency-Aware Neural Topic Model](https://doi.org/10.101
 
 ## Run:
 - python ./run_depntm.py --hidden 512 --topicembedsize 256 --topics 50  --data-path data_path --vocab-size 10050  --label-path id_label_50.txt.train --label-voc-path label_fre_sorted_list.txt --fname abstract_50 --gama 64 --z2-dim 64 --model-save-path output_dir --background-topics 5
+- 
+## Thanks:
+This code is based on the following work: Yang, M., Liu, F., Chen, Z., Shen, X., Hao, J., & Wang, J. (2021). CausalVAE: Disentangled representation learning via neural structural causal models. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition.
 
 ## Citation: 
 If you find this code useful, please cite our paper:
@@ -32,3 +35,4 @@ url = {https://www.sciencedirect.com/science/article/pii/S0306457323002674},
 author = {Heyan Huang and Yi-Kun Tang and Xuewen Shi and Xian-Ling Mao},
 }
 ```
+
